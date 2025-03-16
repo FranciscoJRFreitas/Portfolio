@@ -978,4 +978,17 @@ li:hover {
     bottom: 100%;
     border-color: transparent transparent var(--color-text) transparent;
   }
+
+  /* Adjust tooltip positioning for mobile */
+  .skip-button .tooltip {
+    bottom: auto;    /* Remove the default positioning */
+    top: 140%;       /* Move it below the button */
+  }
+
+  /* Adjust tooltip arrow to point up */
+  .skip-button .tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-color: transparent transparent var(--color-text) transparent;
+  }
 }
