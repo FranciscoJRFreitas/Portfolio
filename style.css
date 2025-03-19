@@ -9,6 +9,42 @@
 html,
 body {
   font-family: "Montserrat", sans-serif;
+  cursor: url('assets/guitar_cursor.png'), auto;
+}
+
+/* AMP cursor on interactive elements, explicitly including slider thumb */
+button:not(.sun-wrapper):not(.moon-wrapper),
+a,
+.button,
+input[type="range"],
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb,
+.mute-button,
+.mute-button *,
+.skip-button,
+.skip-button *,
+.toggle-button,
+.toggle-button *,
+.circle-btn,
+.circle-btn *,
+.fork-button,
+.fork-button *,
+.goTop,
+.goTop *,
+img[onclick],
+*[role="button"],
+*[onclick] {
+  cursor: url('assets/amp_cursor.png'), pointer;
+}
+
+/* Ensure sun and moon icons use default guitar cursor */
+.sun-wrapper,
+.sun-wrapper *,
+.moon-wrapper,
+.moon-wrapper *,
+.sun-wrapper svg,
+.moon-wrapper svg {
+  cursor: url('assets/guitar_cursor.png'), auto !important;
 }
 
 /* body{
@@ -200,19 +236,6 @@ svg {
   }
 }
 
-/* Toggle Bar --------------------------------------------- */
-.toggle-bar {
-  position: fixed;
-  display: flex;
-  opacity: 0;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  top: 48px;
-  right: 48px;
-  z-index: 99999999999999;
-}
-
 .sun-wrapper,
 .moon-wrapper {
   display: flex;
@@ -220,7 +243,11 @@ svg {
   justify-content: center;
   align-items: center;
   color: var(--color-text);
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.moon-wrapper {
+  margin-left: 0px;
 }
 
 .toggle-button {
@@ -734,6 +761,7 @@ li:hover {
   cursor: pointer;
   transition: color 0.3s;
   margin-right: 3px;
+  width: 40px;
 }
 
 .mute-button:hover {
@@ -878,7 +906,7 @@ li:hover {
   justify-content: center;
   align-items: center;
   top: 48px;
-  right: 48px;
+  right: 30px;
   z-index: 99999999999999;
   opacity: 1;
 }
